@@ -1,0 +1,32 @@
+import discord
+from discord.ext import commands
+import random
+import os
+
+description = '''An example bot to showcase the discord.ext.commands extension
+module.
+
+There are a number of utility commands being showcased here.'''
+    
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', description=description, intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Logged in as{bot.user}(ID: {bot.user.id})')
+    print('------')
+
+consejos_ecologicos = [ "-Preferir caminar, o usar la bicicleta para reducir la contaminacion y a la vez mejorar la salud, ya que permanecemos activos"
+                        "-Comprar solo lo necesario"
+                        "-Utilizar el agua y energia de manera racional y eficiente"
+                    ]
+
+@bot.command(description="For when you wanna settle the score some other way")
+async def bot_ecologico(ctx, *choices: str):
+    """Chosses between multiple choices."""
+    await ctx.send(random.choice(bot_ecologico))
+
+bot.run('MTE4NzUzMTg5NjcyMTI1NjQ3OA.GkcHIf.OBzsmWIKboyxye6n1VF2e-Tqyc9OnmvsKznDk0')
