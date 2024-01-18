@@ -29,4 +29,4 @@ async def bot_ecologico(ctx, *choices: str):
     """Chosses between multiple choices."""
     await ctx.send(random.choice(bot_ecologico))
 
-bot.run('MTE4NzUzMTg5NjcyMTI1NjQ3OA.GkcHIf.OBzsmWIKboyxye6n1VF2e-Tqyc9OnmvsKznDk0')
+bot.run('token')
